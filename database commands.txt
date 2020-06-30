@@ -1,0 +1,124 @@
+ Database: `carshare`
+
+
+Table structure for table `carsharetrips`
+-
+
+
+CREATE TABLE `carsharetrips` (
+  `trip_id` int(4) NOT NULL,
+  `user_id` int(4) DEFAULT NULL,
+  `departure` char(30) DEFAULT NULL,
+  `departureLongitude` char(30) DEFAULT NULL,
+  `departureLatitude` char(30) DEFAULT NULL,
+  `destination` char(30) DEFAULT NULL,
+  `destinationLongitude` char(30) DEFAULT NULL,
+  `destinationLatitude` char(30) DEFAULT NULL,
+  `price` int(10) DEFAULT NULL,
+  `seatsavailable` char(2) DEFAULT NULL,
+  `regular` char(1) DEFAULT NULL,
+  `date` char(20) DEFAULT NULL,
+  `time` char(10) DEFAULT NULL,
+  `monday` char(1) DEFAULT NULL,
+  `tuesday` char(1) DEFAULT NULL,
+  `wednesday` char(1) DEFAULT NULL,
+  `thursday` char(1) DEFAULT NULL,
+  `friday` char(1) DEFAULT NULL,
+  `saturday` char(1) DEFAULT NULL,
+  `sunday` char(1) DEFAULT NULL
+)
+
+
+ Table structure for table `forgotpassword`
+--
+
+
+CREATE TABLE `forgotpassword` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `rkey` char(32) NOT NULL,
+  `time` int(11) NOT NULL,
+  `status` varchar(7) NOT NULL
+)
+
+Table structure for table `rememberme`
+-
+
+
+CREATE TABLE `rememberme` (
+  `id` int(11) NOT NULL,
+  `authentificator1` char(20) DEFAULT NULL,
+  `f2authentificator2` char(64) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `expires` datetime DEFAULT NULL
+)
+
+
+ Table structure for table `users`
+-
+
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `first_name` char(30) NOT NULL,
+  `last_name` char(30) NOT NULL,
+  `username` varchar(30) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL,
+  `activation` char(32) DEFAULT NULL,
+  `activation2` char(32) DEFAULT NULL,
+  `gender` char(6) DEFAULT NULL,
+  `phonenumber` char(15) DEFAULT NULL,
+  `moreinformation` varchar(300) DEFAULT NULL,
+  `profilepicture` varchar(55) DEFAULT NULL
+)
+
+
+Indexes for table `carsharetrips`
+--
+ALTER TABLE `carsharetrips`
+  ADD PRIMARY KEY (`trip_id`);
+
+
+
+
+Indexes for table `forgotpassword`
+--
+ALTER TABLE `forgotpassword`
+  ADD PRIMARY KEY (`id`);
+
+
+
+
+Indexes for table `rememberme`
+--
+ALTER TABLE `rememberme`
+  ADD PRIMARY KEY (`id`);
+
+
+
+
+Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+
+
+
+
+AUTO_INCREMENT for table `carsharetrips`
+--
+ALTER TABLE `carsharetrips`
+  MODIFY `trip_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+-
+
+
+ AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+COMMIT;
+
+/*!40101 
